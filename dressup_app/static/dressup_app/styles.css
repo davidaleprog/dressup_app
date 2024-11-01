@@ -1,0 +1,232 @@
+/* styles.css */
+
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e9dfcd;
+    color: #333;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    height: auto;
+    margin: 20px;
+}
+
+/* Top stripe with centered title */
+.header {
+    width: 100vw;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    background-color: #5a1717;
+    margin: 0;
+    padding: 0;
+}
+
+.header-top-stripe {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Adjust stripe color here */
+    width: 100%;
+}
+
+.header-top-stripe h1 {
+    margin: 0;
+    color: #fff;
+    font-size: 24px;
+}
+
+/* Menu buttons below stripe */
+.header-menu {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 10px 0;
+    background-color: #fff;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-menu button {
+    padding: 8px 16px;
+    font-size: 16px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.header-menu button:hover {
+    background-color: #45a049;
+}
+
+/* Container Styling */
+.container {
+    background-color: #fff;
+    padding: 20px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+}
+
+/* Header Styling */
+h1 {
+    font-size: 24px;
+    text-align: center;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Item List Styling */
+.item-list {
+    list-style: square;
+    padding: 0;
+}
+.item-list li {
+    background: #fff;
+    margin: 10px 0;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.item-info {
+    flex: 1;
+}
+
+.outfit-list {
+    background: #fff ;
+    margin: 10px 0;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.outfit-info {
+    flex: 1;
+}
+
+.outfit-items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+img {
+    max-width: 300px; /* Control image size */
+    margin: 10px 0; /* Space above and below the image */
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    gap: 10px;
+}
+
+.links a {
+    display: block; /* Makes each link appear on a new line */
+    margin: 5px 0; /* Space between links */
+}
+
+/* Form Element Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-weight: bold;
+    font-size: 14px;
+    color: #444;
+}
+
+input[type="text"],
+input[type="file"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="file"]:focus,
+select:focus,
+textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+
+/* Button Styling */
+
+button[type="option"] {
+    padding: 7px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #5fa2eb;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 5px 10px;
+}
+
+button[type="fixed"]{
+    position: fixed;
+    bottom: 30px;
+    right: 40px;
+    z-index: 1000;
+    padding: 7px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #077efc;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 5px 10px;
+}
+
+
+button[type="submit"] {
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 5px 0;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Back Link Styling */
+p a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+p a:hover {
+    text-decoration: underline;
+}

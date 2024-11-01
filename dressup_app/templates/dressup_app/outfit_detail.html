@@ -1,0 +1,41 @@
+<!-- items/templates/items/detail.html -->
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Outfit details</title>
+    <link rel="stylesheet" href="{% static 'dressup_app/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Website Title</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+
+    <main>
+    <section class="outfit-items">
+        {% for item in outfit.items.all %}
+            {% if item.picture %}
+                <div class="item">
+                    <img src="{{ item.picture.url }}" alt="Item Image" style="max-width: 100px;">
+                </div>
+            {% endif %}
+        {% endfor %}
+    </section>
+    </main>
+
+    <footer>
+        <button type="option" onclick="location.href='{% url 'outfit_update' outfit.id %}'">Edit</button>
+        <button type="option" onclick="confirmDelete('{% url 'outfit_delete' outfit.id %}')">Delete</button>
+        <button type="option" onclick="location.href='{% url 'outfit_list' %}'">Back to List</button>
+</body>
+</html>

@@ -1,0 +1,48 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All items</title>
+    <link rel="stylesheet" href="{% static 'dressup_app/styles.css' %}">
+</head>
+<body>
+    <div class="header">
+        <h1 style="text-align: center;">All items</h1>
+        <p><button type="option" onclick="location.href='{% url 'outfit_list' %}'">Go to outfits</button></p>
+    </div>
+
+    <div
+
+    <div class="content">
+        <button type="fixed" onclick="location.href='{% url 'item_create' %}'">Add New Item</button>
+
+        <ul class="item-list">
+            {% for item in items %}
+                <li>
+                    <a href="{% url 'item_detail' item.id %}" style="text-decoration: none; color: inherit;">
+                        <div class="item-info">
+                            <strong>{{ item.type }}</strong> - {{ item.color }} - {{ item.shape }} | ID: {{ item.id }}
+                        </div>
+                        {% if item.picture %}
+                            <img src="{{ item.picture.url }}" alt="item Image" style="max-width: 300px;">
+                        {% endif %}
+                    </a>
+                    <div>
+                        <button type="option" onclick="location.href='{% url 'item_update' item.id %}'">Edit</button>
+                        <button type="option" onclick="confirmDelete('{% url 'item_delete' item.id %}')">Delete</button>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <script>
+        function confirmDelete(deleteUrl) {
+            if (confirm('Are you sure you want to delete this item?')) {
+                location.href = deleteUrl;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!-- items/templates/items/detail.html -->
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>item Detail</title>
+    <link rel="stylesheet" href="{% static 'dressup_app/styles.css' %}">
+</head>
+<body>
+    <h1>{{ item.type }} - {{ item.color }} - {{ item.shape }}</h1>
+    <p>Color: {{ item.color }}</p>
+    <p>Shape: {{ item.shape }}</p>
+    {% if item.picture %}
+        <img src="{{ item.picture.url }}" alt="item Image" style="max-width: 300px;">
+    {% endif %}
+    <p><button type="option" onclick="location.href='{% url 'item_update' item.id %}'">Edit</button></p>
+    <p><button type="option" onclick="location.href='{% url 'item_delete' item.id %}'">Delete</button></p>
+    <p><button type="option" onclick="location.href='{% url 'item_list' %}'">Back to List</button></p>
+</body>
+</html>
